@@ -679,8 +679,22 @@
   // CURSOR
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+  let rx = mx, ry = my;
+  let cursorVisible = false;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    if (!cursorVisible) {
+      cursorVisible = true;
+      cursor.style.opacity = '1';
+      ring.style.opacity = '0.5';
+    }
+  });
+
+  cursor.style.opacity = '0';
+  ring.style.opacity = '0';
+
   function animCursor() {
     cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
     rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
@@ -688,6 +702,22 @@
     requestAnimationFrame(animCursor);
   }
   animCursor();
+
+  // Scale ring on hover over links/buttons
+  document.querySelectorAll('a, button, .btn, .skill-card, .stat-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      ring.style.width = '60px'; ring.style.height = '60px';
+      ring.style.borderColor = 'var(--neon-pink)';
+      cursor.style.background = 'var(--neon-pink)';
+      cursor.style.boxShadow = '0 0 10px var(--neon-pink), 0 0 30px var(--neon-pink)';
+    });
+    el.addEventListener('mouseleave', () => {
+      ring.style.width = '36px'; ring.style.height = '36px';
+      ring.style.borderColor = 'var(--neon-cyan)';
+      cursor.style.background = 'var(--neon-cyan)';
+      cursor.style.boxShadow = '0 0 10px var(--neon-cyan), 0 0 30px var(--neon-cyan)';
+    });
+  });
 
   // TYPED TEXT
   const phrases = [
