@@ -635,9 +635,12 @@
         <div class="t-line"><span class="t-prompt">utpal@dev:~$</span><span class="t-cmd"> ls skills/</span></div>
         <div class="t-out highlight">html_css/ &nbsp; javascript/ &nbsp; python/ &nbsp; android/ &nbsp; web_dev/</div>
         <br/>
-        <div class="t-line"><span class="t-prompt">utpal@dev:~$</span><span class="t-cmd"> ping successmr65@gmail.com</span></div>
-        <div class="t-out">Pinging successmr65@gmail.com...</div>
+        <div class="t-line"><span class="t-prompt">utpal@dev:~$</span><span class="t-cmd"> ping <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0c7f796f6f697f7f617e3a394c6b616d6560226f6361">[email&#160;protected]</a></span></div>
+        <div class="t-out">Pinging <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6a191f09090f191907185c5f2a0d070b030644090507">[email&#160;protected]</a>...</div>
         <div class="t-out highlight">Reply: Available for collaborations & opportunities ✓</div>
+        <br/>
+        <div class="t-line"><span class="t-prompt">utpal@dev:~$</span><span class="t-cmd"> cat contact.json</span></div>
+        <div class="t-out highlight">{ "mobile": "+91 9429895554", "email": "successmr65@gmail.com" }</div>
         <br/>
         <div class="t-line"><span class="t-prompt">utpal@dev:~$</span><span class="t-cmd"> _</span><span class="t-cursor"></span></div>
       </div>
@@ -655,8 +658,11 @@
       <a href="mailto:successmr65@gmail.com" class="contact-email">
         successmr65@gmail.com
       </a>
+      <a href="tel:+919429895554" class="contact-email" style="margin-top:12px; color:var(--neon-green); text-shadow: 0 0 20px rgba(57,255,20,0.3);">
+        📞 +91 9429895554
+      </a>
       <div style="margin-top:36px;">
-        <a href="mailto:successmr65@gmail.com" class="btn btn-primary">SEND MESSAGE</a>
+        <a href="/cdn-cgi/l/email-protection#cebdbbadadabbdbda3bcf8fb8ea9a3afa7a2e0ada1a3" class="btn btn-primary">SEND MESSAGE</a>
       </div>
     </div>
   </section>
@@ -669,7 +675,7 @@
 
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // CURSOR
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
@@ -708,20 +714,4 @@
   }
   setTimeout(typeLoop, 1400);
 
-  // SKILL BAR ANIMATION ON SCROLL
-  const fills = document.querySelectorAll('.skill-bar-fill');
-  const widths = Array.from(fills).map(f => f.style.width);
-  fills.forEach(f => f.style.width = '0%');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        fills.forEach((f, i) => f.style.width = widths[i]);
-        obs.disconnect();
-      }
-    });
-  }, { threshold: 0.2 });
-  const sg = document.querySelector('.skills-grid');
-  if (sg) obs.observe(sg);
-</script>
-</body>
-</html>
+  //
